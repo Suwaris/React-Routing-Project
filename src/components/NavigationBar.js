@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import imageSrc from '../images/logo.png';
 import classes from '../pages/Home.css';
 import { useState } from 'react';
@@ -20,6 +20,18 @@ function NavigationBar({ products }) {
     console.log('Selected Brand:', selectedBrand);
   };
 
+  const getLinkForBrand = () => {
+    // Define the links for each brand
+    const brandLinks = {
+      '': '/home', // Default link when no brand is selected
+      'spa ceylon': '/spa-ceylon',
+      'viana': '/viana',
+      'luv esence': '/luv-esence'
+    };
+
+    // Get the link based on the selected brand
+    return brandLinks[selectedBrand];
+  };
   return (
     <div className="header">
       <header className="container">
@@ -68,11 +80,12 @@ function NavigationBar({ products }) {
         <ul className="header-list">
           <li>Home</li>
           <li className="dropdown">
-            <select value={selectedBrand} onChange={handleBrandChange}>
+            <select href={getLinkForBrand()} value={selectedBrand} onChange={handleBrandChange}>
               <option value="">Categories</option>
               <option value="spa ceylon">Spa Ceylon</option>
               <option value="viana">Viana</option>
               <option value="luv esence">Luv Esence</option>
+              <NavLink to="brands/spaceylon" value={selectedBrand} onChange={handleBrandChange}></NavLink>
             </select>
           </li>
           <li>Contact Us</li>
@@ -80,7 +93,8 @@ function NavigationBar({ products }) {
         </ul>
       </div>
 
-      <LastShow propValue={selectedBrand} products={products} />
+      <LastShow propValue={selectedBrand} products={products}  />
+      {/* <a href={getLinkForBrand()}>Go to {selectedBrand}</a> */}
     </div>
   );
 }

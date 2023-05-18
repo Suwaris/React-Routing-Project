@@ -67,7 +67,7 @@ function LastShow(props) {
   console.log('Products:', props.products);
 
   if (!products || products.length === 0) {
-    return <div>No products available.</div>;
+    return <div></div>;
   }
   
 

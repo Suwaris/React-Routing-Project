@@ -1,6 +1,7 @@
 import NavigationBar from "../NavigationBar";
 import Content from "../Content";
 import { useLocation } from "react-router-dom";
+import LastShow from "../products/LastShow";
 
 
 function Brands({products}) {
@@ -8,8 +9,9 @@ function Brands({products}) {
 
     return(
         <div>
-            <NavigationBar/>
-            <p>Brand:</p>
+            {/* <NavigationBar/> */}
+            {/* <Content/> */}
+            {/* <LastShow/> */}
         </div>
     )
 }

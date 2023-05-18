@@ -6,19 +6,19 @@ import NavigationBar from "./NavigationBar";
 const DUMMY_DATA = [
     {
         id: 'm1',
-        title: 'luv fragrance',
+        title: 'luv esence',
         image:
           'https://www.kapruka.com/shops/specialGifts/productImages/16372183200004_14_m.jpg',
-       price: '$19.99',
+       price: 'Rs.18000.00',
         description:
           'Rose Exotique – Mini Perfumed Body Mist 30ml',
       },
       {
         id: 'm2',
-        title: 'luv fragrance',
+        title: 'luv esence',
         image:
           'https://www.kapruka.com/shops/specialGifts/productImages/16372183200002_10_m.jpg',
-        price: '$19.99',
+        price: 'Rs.1450.00',
         description:
           'Rose Exotique – Mini Perfumed Body Mist 30ml',
       },
@@ -65,7 +65,7 @@ function Content (){
     return (
         <section>
             {/* <ProductList products={DUMMY_DATA}/>  */}
-           <LastShow products={DUMMY_DATA}/>
+           {/* <LastShow products={DUMMY_DATA}/> */}
            <NavigationBar products={DUMMY_DATA}/>
 
         </section >
