@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import LoginPage from "./pages/LoginPage"
+import Register from "./pages/Register";
+import Brands from "./components/brands/Brands";
+import DUMMY_DATA from "./components/Content"
+import SpaCeylon from "./components/brands/SpaCeylon";
+import Viana from "./components/brands/Viana";
+import LastShow from "./components/products/LastShow";
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register-user" element={<Register />} />
+      <Route path="/brands" element={<Brands />}/>
+      <Route path="/spaceylon" element={<SpaCeylon/>} />
+      <Route path="/viana" element={<Viana/>} />
+      
+    </Routes>  
   );
 }
 
